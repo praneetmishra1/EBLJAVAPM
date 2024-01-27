@@ -1,46 +1,44 @@
 package com.wecp.progressive.dao;
 
-import java.util.List;
-
 import com.wecp.progressive.dto.CustomerAccountInfo;
 import com.wecp.progressive.entity.Customers;
 
-public class CustomerDAOImpl implements CustomerDAO{
-
-    @Override
-    public int addCustomer(Customers customers) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public void deleteCustomer(int customerId) {
-        // TODO Auto-generated method stub
-        
-    }
-
+import java.util.ArrayList;
+import java.util.List;
+ 
+public class CustomerDAOImpl implements CustomerDAO {
+ 
+ 
     @Override
     public List<Customers> getAllCustomers() {
-        // TODO Auto-generated method stub
-        return null;
+        List<Customers> customers = new ArrayList<>();
+        return  customers;
     }
-
-    @Override
-    public CustomerAccountInfo getCustomerAccountInfo(int customerId) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
+ 
     @Override
     public Customers getCustomerById(int customerId) {
-        // TODO Auto-generated method stub
-        return null;
+        return  null;
     }
-
+ 
+    @Override
+    public int addCustomer(Customers customers) {
+        int generatedID = -1;
+        return generatedID;
+    }
+ 
     @Override
     public void updateCustomer(Customers customers) {
-        // TODO Auto-generated method stub
-        
+ 
     }
-    
+ 
+    @Override
+    public void deleteCustomer(int customerId) {
+ 
+    }
+ 
+    @Override
+    public CustomerAccountInfo getCustomerAccountInfo(int customerId) {
+        return null;
+    }
+ 
 }
