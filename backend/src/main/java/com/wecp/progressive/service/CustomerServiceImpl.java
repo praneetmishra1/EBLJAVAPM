@@ -1,5 +1,6 @@
 package com.wecp.progressive.service;
 
+
 import com.wecp.progressive.dao.CustomerDAO;
 import com.wecp.progressive.dao.CustomerDAOImpl;
 import com.wecp.progressive.entity.Customers;
@@ -8,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
 
 public class CustomerServiceImpl implements CustomerService {
 
