@@ -12,14 +12,16 @@ import com.wecp.progressive.entity.Customers;
 import com.wecp.progressive.repository.CustomerRepository;
 
 @Service
-public class CustomerServiceImplJpa implements CustomerService {
-
-    private static List<Customers> customerList = new ArrayList<Customers>();
+public class CustomerServiceImplJpa implements CustomerService{
     
     @Autowired
     private CustomerRepository customerRepository;
 
-    public CustomerServiceImplJpa(CustomerRepository customerRepository){
+    public List<Customers> list = new ArrayList<>();
+
+    
+
+    public CustomerServiceImplJpa(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
 
@@ -50,31 +52,30 @@ public class CustomerServiceImplJpa implements CustomerService {
 
     @Override
     public List<Customers> getAllCustomersSortedByName() throws SQLException {
-        List<Customers> customersList = getAllCustomers();
-        Collections.sort(customersList);
-        return customersList;
+        return null;
     }
 
     @Override
     public List<Customers> getAllCustomersFromArrayList() {
-        return customerList;
+        return list;
     }
 
     @Override
     public List<Customers> addCustomersToArrayList(Customers customers) {
-        customerList.add(customers);
-        return customerList;
+        list.add(customers);
+        return list;
     }
 
     @Override
     public List<Customers> getAllCustomersSortedByNameFromArrayList() {
-        Collections.sort(customerList);
-        return customerList;
+        List<Customers> sortedList = list;
+        Collections.sort(sortedList);
+        return sortedList;
     }
 
     @Override
     public void emptyArrayList() {
-        customerList.clear();
+        list = new ArrayList<>();
     }
-
+    
 }

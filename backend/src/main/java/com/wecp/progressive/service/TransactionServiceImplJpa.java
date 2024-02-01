@@ -11,8 +11,7 @@ import com.wecp.progressive.repository.AccountRepository;
 import com.wecp.progressive.repository.TransactionRepository;
 
 @Service
-public class TransactionServiceImplJpa implements TransactionService{
-
+public class TransactionServiceImplJpa implements TransactionService {
     @Autowired
     private TransactionRepository transactionRepository;
 
@@ -28,39 +27,39 @@ public class TransactionServiceImplJpa implements TransactionService{
 
     @Override
     public List<Transactions> getAllTransactions() throws SQLException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllTransactions'");
+        return transactionRepository.findAll();
     }
 
     @Override
     public Transactions getTransactionById(int transactionId) throws SQLException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTransactionById'");
+        return transactionRepository.findById(transactionId).get();
     }
 
     @Override
     public int addTransaction(Transactions transaction) throws SQLException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addTransaction'");
+        return transactionRepository.save(transaction).getTransactionId();
     }
 
     @Override
     public void updateTransaction(Transactions transaction) throws SQLException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'updateTransaction'");
+        // transactionRepository.findById(transaction.getTransactionId()).map(t -> {
+        //     t.setAccountId(transaction.getAccountId());
+        //     t.setAmount(transaction.getAmount());
+        //     t.setTransactionDate(transaction.getTransactionDate());
+        //     t.setTransactionType(transaction.getTransactionType());
+        //     return transactionRepository.save(t);
+        // });
+        transactionRepository.save(transaction);
     }
 
     @Override
     public void deleteTransaction(int transactionId) throws SQLException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'deleteTransaction'");
+        transactionRepository.deleteById(transactionId);
     }
 
     @Override
     public List<Transactions> getTransactionsByCustomerId(int customerId) throws SQLException {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getTransactionsByCustomerId'");
+        return null;
     }
-
 
 }
