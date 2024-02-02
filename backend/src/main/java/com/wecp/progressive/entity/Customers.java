@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Customers implements Comparable<Customers> {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int customerId;
@@ -17,6 +18,7 @@ public class Customers implements Comparable<Customers> {
     private String role;
 
     public Customers() {
+        // constructor
     }
 
     public Customers(int customerId, String name, String email, String username, String password) {
@@ -27,7 +29,7 @@ public class Customers implements Comparable<Customers> {
         this.password = password;
     }
 
-
+    // Getters and setters
     public int getCustomerId() {
         return customerId;
     }
@@ -76,8 +78,8 @@ public class Customers implements Comparable<Customers> {
     }
 
     @Override
-    public int compareTo(Customers cus1) {
-        
-        return this.getName().compareTo(cus1.getName());
+    public int compareTo(Customers otherCustomers) {
+        // Implement comparison logic based on customer name
+        return this.getName().compareTo(otherCustomers.getName());
     }
 }
